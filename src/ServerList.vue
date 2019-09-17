@@ -2,8 +2,8 @@
   <ul class="list-group">
       <my-server 
         v-for="index in 5" 
-        v-bind:key="index"
-        v-bind:index="index">
+        :key="index"
+        :index="index">
       </my-server>
   </ul>  
 </template>
