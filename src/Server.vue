@@ -15,5 +15,12 @@
   }
 </script>
 
-<style>
+<style scoped>
+  li {
+    cursor: pointer;
+  }
+
+  li:hover {
+    background-color: lightgray;
+  }
 </style>

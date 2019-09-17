@@ -1,8 +1,19 @@
 <template>
-  <p>Server Details are currently not updated</p>
+  <p v-if="server">
+    Server #{{ server.id }} has status {{ server.status }}
+  </p>
+  <p v-else>
+    No server selected
+  </p>
 </template>
 
-<script></script>
+<script>
+  export default {
+    props: {
+      server: Object
+    }
+  }
+</script>
 
 <style>
 </style>
