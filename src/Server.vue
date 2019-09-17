@@ -1,5 +1,7 @@
 <template>
-  <li class="list-group-item">
+  <li 
+    class="list-group-item"
+    @click="onServerSelected(server)">
     Server #{{ server.id }}
   </li>  
 </template>
@@ -9,6 +11,10 @@
     props: {
       server: {
         type: Object,
+        required: true
+      },
+      onServerSelected: {
+        type: Function,
         required: true
       }
     }

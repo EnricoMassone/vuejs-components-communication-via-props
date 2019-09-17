@@ -3,7 +3,8 @@
       <my-server 
         v-for="server in servers" 
         :key="server.id"
-        :server="server">
+        :server="server"
+        :onServerSelected="onServerSelected">
       </my-server>
   </ul>  
 </template>
@@ -15,6 +16,10 @@
     props: {
       servers: {
         type: Array,
+        required: true
+      },
+      onServerSelected: {
+        type: Function,
         required: true
       }
     },
