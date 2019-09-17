@@ -51,6 +51,10 @@
             return server;
           }
         });
+
+        if (this.selectedServer) {
+          this.selectedServer = this.servers.find(server => server.id === this.selectedServer.id);
+        }
       }
     },
 
