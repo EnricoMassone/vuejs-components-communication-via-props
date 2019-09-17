@@ -36,12 +36,16 @@
 
     methods: {
       serverStatusChanged(event) {
-        console.log(event.target.value);
+        this.onServerStatusChanged(this.server.id, event.target.value);
       }
     },
 
     props: {
-      server: Object
+      server: Object,
+      onServerStatusChanged: {
+        type: Function,
+        required: true
+      }
     }
   }
 </script>

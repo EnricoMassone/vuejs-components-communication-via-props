@@ -8,7 +8,9 @@
           </my-server-list>
       </div>
       <div class="col-xs-12 col-sm-6">
-          <my-server-details :server="selectedServer">
+          <my-server-details 
+            :server="selectedServer"
+            :onServerStatusChanged="serverStatusUpdated">
 
           </my-server-details>
       </div>
@@ -36,6 +38,10 @@
     methods: {
       selectedServerChanged(server) {
         this.selectedServer = server;
+      },
+
+      serverStatusUpdated(serverId, updatedStatus) {
+        console.log(`Status of server ${serverId} changed to ${updatedStatus}`);
       }
     },
 
