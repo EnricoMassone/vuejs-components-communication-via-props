@@ -4,7 +4,9 @@
     <form>
       <div class="form-group">
         <label>Status</label>
-        <select class="form-control">
+        <select 
+          class="form-control"
+          @change="serverStatusChanged">
           <option
             v-for="status in statuses"
             :key="status"
@@ -30,6 +32,12 @@
       return {
         statuses: ["Normal", "Degraded", "Critical"]
       };
+    },
+
+    methods: {
+      serverStatusChanged(event) {
+        console.log(event.target.value);
+      }
     },
 
     props: {
