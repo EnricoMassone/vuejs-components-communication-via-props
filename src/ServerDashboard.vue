@@ -41,7 +41,16 @@
       },
 
       serverStatusUpdated(serverId, updatedStatus) {
-        console.log(`Status of server ${serverId} changed to ${updatedStatus}`);
+        this.servers = this.servers.map(server => {
+          if (server.id === serverId) {
+            return {
+              id: server.id,
+              status: updatedStatus
+            };
+          } else {
+            return server;
+          }
+        });
       }
     },
 

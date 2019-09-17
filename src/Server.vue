@@ -1,7 +1,12 @@
 <template>
   <li 
     class="list-group-item"
-    @click="onServerSelected(server)">
+    @click="onServerSelected(server)"
+    :class="{
+      'list-group-item-warning': server.status === 'Degraded',
+      'list-group-item-danger': server.status === 'Critical',
+      'list-group-item-success': server.status === 'Normal'
+    }">
     Server #{{ server.id }}
   </li>  
 </template>
@@ -24,9 +29,5 @@
 <style scoped>
   li {
     cursor: pointer;
-  }
-
-  li:hover {
-    background-color: lightgray;
   }
 </style>

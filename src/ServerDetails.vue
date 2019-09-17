@@ -20,9 +20,9 @@
   </div>
 
   <div v-else>
-    <p>
+    <h3>
       No server selected
-    </p>
+    </h3>
   </div>
 </template>
 
