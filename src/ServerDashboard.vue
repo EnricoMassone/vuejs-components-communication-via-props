@@ -35,7 +35,7 @@
 
     methods: {
       selectedServerChanged(server) {
-        console.log(`The selcted server is #${server.id}`);
+        this.selectedServer = server;
       }
     },
 
