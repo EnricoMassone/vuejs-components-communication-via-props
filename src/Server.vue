@@ -1,13 +1,16 @@
 <template>
   <li class="list-group-item">
-    Server #{{ index }}
+    Server #{{ server.id }}
   </li>  
 </template>
 
 <script>
   export default {
     props: {
-      index: Number
+      server: {
+        type: Object,
+        required: true
+      }
     }
   }
 </script>
